@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>News Site</title>
+    <title>Coffe Shop</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo $base ?>/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +21,13 @@
   </head>
 
   <body>
+
+<?php
+
+include "nav.php";
+
+?>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -29,9 +36,3 @@
     <script src="<?php echo $base ?>/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug
     <script src="js/ie10-viewport-bug-workaround.js"></script> -->
-
-<?php
-
-include "nav.php";
-
-?>
