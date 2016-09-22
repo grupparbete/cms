@@ -1,30 +1,149 @@
-<!DOCTYPE HTML>
-<head>
-  <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
-  <link rel="stylesheet" href="public/css/style.css" media="screen">
-</head>
-<body>
+<?php
 
-<div id="header"></div>
-<div id="sidebar">
-  log in
-  <div id="btn1" class="sideBtn">Button 1</div>
-  <div id="btn2" class="sideBtn">Button 2</div>
-  <div id="btn3" class="sideBtn">Button 3</div>
-  <div id="btn4" class="sideBtn">Button 4</div>
-  <div id="btn5" class="sideBtn">Button 5</div>
-  <div id="btn6" class="sideBtn">Button 6</div>
-</div>
-<div id="main">
-  <form id="imgUploader" action="public/admin/imgUpload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-  </form>
-</div>
-<div id="footer"></div>
+error_reporting(E_ALL);
+ini_set('display_errors',1); // DEV ENV
 
-</body>
-</html>
+require "lib/main.php";
+
+// Database connection
+require "lib/db.php";
+
+$app = new Rout($db);
+/*$app->setDb($db);*/
+
+$login = new Login($db);
+
+$login->createUser("admin", "admin", 999);
+
+$posts = new Posts($db);
+$posts->setDb($db);
+
+
+$app->get("/", function() use($app)
+{
+
+	$app->render("home.php");
+
+});
+
+
+$app->get("/news", function() use($app, $posts)
+{
+
+    $post = [];
+
+    foreach($posts->getPosts() as $row) {
+        $post[] = $row;
+    }
+
+  	$app->render("news.php", $post);
+
+});
+
+
+$app->get("/post/:id", function($id) use($app, $posts)
+{
+
+    $r = $posts->getPost($id);
+
+    $app->render("article.php", $r);
+
+});
+
+
+$app->get("/post", function() use ($app, $login, $posts)
+{
+
+	$post = [];
+
+    foreach($posts->getPosts() as $row) {
+        $post[] = $row;
+    }
+
+	$app->render("add.php", $post);
+
+});
+
+$app->get("/del/:id", function($id) use ($app, $login, $posts)
+{
+
+	if ($login->isLoggedIn()) {
+
+		$res = $posts->delPost($id);
+
+		if ($res > 0) {
+
+			$app->redirect("/post", $res." Artikel raderad");
+
+		} else {
+
+			$app->redirect("/post", "Fel i raderingen!");
+
+		}
+
+	} else {
+
+		$app->redirect("/", "");
+
+	}
+
+});
+
+
+$app->post("/post/add", function() use ($app, $posts, $login)
+{
+
+	$cont = [];
+
+	$cont[] = $_POST["title"];
+	$cont[] = $_POST["text"];
+	$cont[] = "default.jpg";
+	$cont[] = $login->getUserId();
+
+	$posts->addPost($cont);
+
+});
+
+
+$app->post("/login", function () use ($app, $login)
+{
+
+	if ($login->tryLogin($_POST)) {
+
+		$app->redirect("/", "");
+
+	} else {
+
+		$app->redirect("/", "Användarnamnet eller lösenordet är fel!");
+
+	}
+
+});
+
+
+$app->get("/logout", function () use ($app, $login)
+{
+
+	if ($login->tryLogout()) {
+
+		$app->redirect("/", "");
+
+	} else {
+
+		$app->redirect("/", "");
+
+	}
+
+});
+
+
+/* FOR TESTING PURPOSES
+
+$app->get("/news/redir", function() use ($app)
+{
+
+	$app->redirect("/news");
+
+});
+
+*/
