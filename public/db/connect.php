@@ -1,10 +1,14 @@
 <?php
 
-class Db{
+class Db
+{
   public $mysql;
 
-  function __construct() {
+  function __construct() 
+  {
+
     $this->mysql = new mysqli('localhost', 'root', '', 'coffeeshop') or die('connection problem');
-}
+    
+  }
 }
 ?>
