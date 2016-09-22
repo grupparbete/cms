@@ -18,7 +18,7 @@
   <div id="btn6" class="sideBtn">Button 6</div>
 </div>
 <div id="main">
-  <form id="imgUploader" action="imgUpload.php" method="post" enctype="multipart/form-data">
+  <form id="imgUploader" action="public/admin/imgUpload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
