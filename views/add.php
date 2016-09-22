@@ -7,7 +7,7 @@
 <?php 
 
 if (isset($_SESSION["redir"])) {
-	echo "<p style='color:red'>{$_SESSION['redir']}</p>";
+	echo "<p class='heads-up' style='color:red'>{$_SESSION['redir']}</p>";
 	unset($_SESSION["redir"]);
 }
 
