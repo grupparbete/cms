@@ -1,6 +1,6 @@
 <?php
 
-$driver = "mysql:host=localhost;dbname=news;charset=utf8";
+$driver = "mysql:host=localhost;dbname=coffeshop;charset=utf8";
 $username = "root";
 $password = "";
 
