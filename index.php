@@ -12,8 +12,9 @@ $app = new Rout($db);
 /*$app->setDb($db);*/
 
 $login = new Login($db);
+$app->setDb($db);
 
-$login->createUser("admin", "admin", 999);
+$login->createUser("admin", "admin123", 999);
 
 $posts = new Posts($db);
 $posts->setDb($db);
