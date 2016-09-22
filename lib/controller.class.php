@@ -17,7 +17,7 @@ class Rout
 
 	public $pReq;
 
-	public $baseurl = "/news"; // has to be set manually if using on a subdir
+	public $baseurl = "/coffe_cms"; // has to be set manually if using on a subdir
 
 	public $db;
 
@@ -69,7 +69,6 @@ class Rout
 		}
 
 		$base = $this->baseurl;
-
 		include __DIR__."/../views/".$file;
 
 	}

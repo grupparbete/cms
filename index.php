@@ -137,6 +137,7 @@ $app->get("/logout", function () use ($app, $login)
 });
 
 
+
 /* FOR TESTING PURPOSES
 
 $app->get("/news/redir", function() use ($app)
