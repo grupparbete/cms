@@ -4,6 +4,10 @@ color: https://color.adobe.com/Coffe-kuler-color-theme-1296739/edit/?copy=true&b
 
 */ 
 
+* {
+  word-wrap: break-word;
+}
+
 body {
   padding-top: 70px;
   background: #D9923B;
@@ -32,6 +36,7 @@ body {
 .navbar {
   background: #731D0A;
 }
+
 
 .container {
   color: white;
