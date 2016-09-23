@@ -12,9 +12,8 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="<?php echo $base ?>">Hem</a></li>
+            <li><a href="<?php echo $base ?>/menu">Menu</a></li>
             <li><a href="<?php echo $base ?>/news">Nyheter</a></li>
-       <!-- <li><a href="news">About</a></li>
-            <li><a href="#contact">Contact</a></li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <?php if (isset($_SESSION["userID"])) { ?>

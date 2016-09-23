@@ -19,9 +19,9 @@ body {
 
 .heads-up {
   color: darkred;
-  background: rgba(255, 255, 255, 0.3);
   padding: 4px;
   border-radius: 2px;
+  font-style: bold;
 }
 
 .header-text {
