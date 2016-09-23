@@ -37,7 +37,16 @@ class Posts extends Login
 
 		if ($this->isLoggedIn()) {
 
-			if (exif_imagetype($_FILES["img"]["tmp_name"]) != false) {
+			if ($_FILES['img']['error'] !== 0) {
+					
+					$sql = "INSERT INTO articles (title, text, img, userID, date) VALUES (?, ?, ?, ?, NOW());";
+
+					$sth = $this->db->prepare($sql);
+
+					$sth->execute($post);
+
+					$this->redirect("/post");
+			} else if (exif_imagetype($_FILES["img"]["tmp_name"]) != false) {
 
 				$filename = tempnam('img/', 'img');
 	    		unlink($filename);
@@ -58,23 +67,22 @@ class Posts extends Login
 
 				} else {
 
-					// $this->redirect("/post", "Fel i uppladningen av filen!");
+					$this->redirect("/post", "Fel i uppladningen av filen!");
 
 				}
 
 			} else {
 
-				// $this->redirect("/post", "Filen måste vara ett bildformat!");
+				$this->redirect("/post", "Filen måste vara ett bildformat!");
 
 			}
 
 		} else {
 
-			// $this->redirect("/post", "Du måste vara inloggad för att lägga till en post");
+			$this->redirect("/post", "Du måste vara inloggad för att lägga till en post");
 
 		}
 
-		print_r($_FILES);
 
 
 	}
