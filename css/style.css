@@ -1,3 +1,62 @@
+/* 
+
+color: https://color.adobe.com/Coffe-kuler-color-theme-1296739/edit/?copy=true&base=2&rule=Custom&selected=0&name=Copy%20of%20Coffe%20kuler&mode=rgb&rgbvalues=0.85098,0.572549,0.231373,0.65098,0.196078,0.031373,0.45098,0.113725,0.039216,0.25098,0.086275,0.05098,0.14902,0.047059,0.039216&swatchOrder=0,1,2,3,4
+
+*/ 
+
+* {
+  word-wrap: break-word;
+}
+
 body {
   padding-top: 70px;
+  background: #D9923B;
 }
+
+.huge-header {
+  font-size: 64px;
+}
+
+.heads-up {
+  color: darkred;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.header-text {
+  position: relative;
+  top: -200px;
+  padding-top: 2px;
+  padding-left: 20px;
+  padding-bottom: 2px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  background: #731D0A;
+}
+
+
+.container {
+  color: white;
+}
+
+#article {
+  background: transparent;
+}
+
+.jumbotron {
+  background: rgba(255, 255, 255, 0.3);
+} 
+
+#nav a {
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+#nav a:hover {
+  background-color: #40160D;
+  transition: 0.5s ease-in-out;
+}
+
