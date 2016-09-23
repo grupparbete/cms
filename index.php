@@ -28,6 +28,14 @@ $app->get("/", function() use($app)
 });
 
 
+$app->get("/menu", function() use ($app) 
+{
+
+	$app->render("menu.php");
+
+});
+
+
 $app->get("/news", function() use($app, $posts)
 {
 

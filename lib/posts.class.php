@@ -32,6 +32,9 @@ class Posts extends Login
 	{
 	// $post should be an array consisting of title, text, img and userID
 
+		print_r($_POST);
+		print_r($_FILES);
+
 		if ($this->isLoggedIn()) {
 
 			if (exif_imagetype($_FILES["img"]["tmp_name"]) != false) {
@@ -55,19 +58,19 @@ class Posts extends Login
 
 				} else {
 
-					$this->redirect("/post", "Fel i uppladningen av filen!");
+					// $this->redirect("/post", "Fel i uppladningen av filen!");
 
 				}
 
 			} else {
 
-				$this->redirect("/post", "Filen måste vara ett bildformat!");
+				// $this->redirect("/post", "Filen måste vara ett bildformat!");
 
 			}
 
 		} else {
 
-			$this->redirect("/post", "Du måste vara inloggad för att lägga till en post");
+			// $this->redirect("/post", "Du måste vara inloggad för att lägga till en post");
 
 		}
 
