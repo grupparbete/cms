@@ -55,7 +55,7 @@ class Posts extends Login
 	    		$file = substr($filename, -7);
 	    		$post[2] = $file;
 
-	    		if (move_uploaded_file($_FILES['img']['tmp_name'], $filename)) {
+	    	if (move_uploaded_file($_FILES['img']['tmp_name'], $filename)) {
 
 					$sql = "INSERT INTO articles (title, text, img, userID, date) VALUES (?, ?, ?, ?, NOW());";
 
@@ -127,5 +127,6 @@ class Posts extends Login
 		return $run;
 
 	}
+
 
 }
