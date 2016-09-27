@@ -19,19 +19,28 @@ $login->createUser("admin", "admin123", 999);
 $posts = new Posts($db);
 $posts->setDb($db);
 
+$menu = new Menus($db);
+$menu->setDb($db);
+
 
 $app->get("/", function() use($app)
 {
-
+ 
 	$app->render("home.php");
 
 });
 
 
-$app->get("/menu", function() use ($app) 
+$app->get("/menu", function() use ($app, $menu) 
 {
 
-	$app->render("menu.php");
+	  $menus = [];
+
+    foreach($menu->getMenu() as $row) {
+        $menus[] = $row;
+    }
+
+	$app->render("menu.php", $menus);
 
 });
 
@@ -113,6 +122,46 @@ $app->post("/post/add", function() use ($app, $posts, $login)
 
 });
 
+$app->post("/menu/add", function() use ($app, $menu, $login) 
+{
+
+	$cont = [];
+	
+	$cont[] = $_POST["title"];
+
+	$menu->addMenu($cont);
+
+});
+
+$app->get("/delMenu/:id", function($id) use ($app, $login, $menu)
+{
+
+	if ($login->isLoggedIn()) {
+
+		echo $id;
+
+		$res = $menu->delMenu($id);
+		
+		echo $res;
+
+		if ($res > 0) {
+
+			$app->redirect("/menu", $res." Artikel raderad");
+
+		} else {
+
+			$app->redirect("/menu", "Fel i raderingen!");
+
+		}
+
+	} else {
+
+		$app->redirect("/", "");
+
+	}
+
+});
+
 
 $app->post("/login", function () use ($app, $login)
 {
@@ -144,6 +193,7 @@ $app->get("/logout", function () use ($app, $login)
 	}
 
 });
+
 
 
 

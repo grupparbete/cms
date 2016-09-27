@@ -12,12 +12,12 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="<?php echo $base ?>">Hem</a></li>
-            <li><a href="<?php echo $base ?>/menu">Menu</a></li>
+            <li><a href="<?php echo $base ?>/menu">Meny</a></li>
             <li><a href="<?php echo $base ?>/news">Nyheter</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <?php if (isset($_SESSION["userID"])) { ?>
-              <li><a href="<?php echo $base ?>/post">Kontrolpanelen</a></li>
+              <li><a href="<?php echo $base ?>/post">Kontrollpanelen</a></li>
               <li><a href="<?php echo $base ?>/logout">Logga ut!</a></li> 
             <?php } else { ?>
             <li><form class="navbar-form" action="<?php echo $base ?>/login" method="POST">
