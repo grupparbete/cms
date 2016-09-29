@@ -22,12 +22,13 @@ body {
   z-index: -999;
 }
 
-.header-img {
-  
+.header-img>img {
+  width: 33%;
 }
 
 .huge-header {
   font-size: 64px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .heads-up {
@@ -54,10 +55,14 @@ span.icon-bar {
 .header-text {
   position: relative;
   top: -200px;
-  padding-top: 2px;
+  padding-top: 10px;
   padding-left: 20px;
-  padding-bottom: 2px;
-  background: rgba(0, 0, 0, 0.3);
+  padding-bottom: 10px;
+  /*background: rgba(0, 0, 0, 0.3);*/
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar {
