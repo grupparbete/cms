@@ -9,8 +9,10 @@ color: https://color.adobe.com/Coffe-kuler-color-theme-1296739/edit/?copy=true&b
 }
 
 body {
-  padding-top: 70px;
-  background: #D9923B;
+  padding-top: 90px;
+  background: url('../img/back.jpg');
+  background-repeat: repeat-y;
+  background-size: 100%;
 }
 
 #footerimg {
@@ -18,6 +20,10 @@ body {
   position: fixed;
   bottom: 0px;
   z-index: -999;
+}
+
+.header-img {
+  
 }
 
 .huge-header {
@@ -40,6 +46,11 @@ span.icon-bar {
   background: #260C0A;
 }
 
+.scrolling {
+  background: #260C0A;
+  transition: 0.5s ease-in;
+}
+
 .header-text {
   position: relative;
   top: -200px;
@@ -50,9 +61,29 @@ span.icon-bar {
 }
 
 .navbar {
-  background: #731D0A;
+  padding-bottom: 4px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 24px;
+  transition: 0.5s ease-in;
 }
 
+.welcome-header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.in {
+  background: #260C0A;
+}
+
+.header-info {
+  margin-top: -150px;
+}
+
+.navbar-brand {
+  font-size: 34px;
+}
 
 .container {
   color: white;
@@ -63,11 +94,87 @@ span.icon-bar {
 }
 
 .jumbotron {
-  background: rgba(255, 255, 255, 0.6);
-} 
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.news {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  margin-right: 20px;
+  width: 50%;
+}
+
+.news-text {
+  width: 50%;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 480px) {
+  .boxes {
+    flex-direction: column;
+  }
+
+  .news {
+    display: block;
+  }
+
+  .image, .news-text {
+    width: 100%;
+  }
+
+  .box1, .box2, .box3 {
+    margin: 5px;
+    padding: 10px;
+  }
+}
+
+.main-pic {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.footer {
+  display: flex;
+  margin-top: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.contact {
+  flex-flow: row;
+  text-align: center;
+}
+
+.contactme {
+  list-style: none;
+  padding: 0px;
+}
+
+.box1, .box2, .box3 {
+  margin: 20px;
+  background: black;
+  padding: 20px;
+  padding-top: 4px;
+  border-radius: 5px;
+  height: auto;
+}
 
 #nav a {
   color: white;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   transition: 0.5s ease-in-out;
 }
 

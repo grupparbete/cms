@@ -10,27 +10,32 @@ include "head.php";
     foreach($v as $row) {
         ?>
 
-        <div class='jumbotron'>
+        <div class='jumbotron news'>
 
-        <img src="img/<?php echo $row['img'] ?>" class="img-responsive img-rounded" alt="Image">
+        <div class="image">
+            <img src="img/<?php echo $row['img'] ?>" class="img-responsive img-rounded" alt="Image">
+        </div>
 
-        <h1><?php echo $row['title'] ?></h1>
+        <div class="news-text">
+            <h1><?php echo $row['title'] ?></h1>
 
-        <h6>Postat av: <?php echo $row['username']." och publicerades: ".$row['date'] ?><h6>
-        <br>
+            <h6>Postat av: <?php echo $row['username']." och publicerades: ".$row['date'] ?><h6>
+            <br>
 
-        <p>
-        <?php 
-            if (strlen($row['text']) >= 50) {
-                echo substr($row['text'], 0, 49)."...";
-            } else {
-                echo $row['text'];
-            } 
-        ?>
-        </p>
-        </p>
+            <p>
+            <?php 
+                if (strlen($row['text']) >= 50) {
+                    echo substr($row['text'], 0, 49)."...";
+                } else {
+                    echo $row['text'];
+                } 
+            ?>
+            </p>
+            </p>
 
-        <p><a class='btn btn-primary btn-lg' href='post/<?php echo $row['aID']?>' role='button'>Läs mera</a></p>
+            <p><a class='btn btn-primary btn-lg' href='post/<?php echo $row['aID']?>' role='button'>Läs mera</a></p>
+        </div>
+
 
         </div>
 
