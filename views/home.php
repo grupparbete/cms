@@ -6,10 +6,17 @@ include "head.php";
     <div class="container">
 
       <div class="welcome-header">
-        <img src="img/coffee-shop.jpg" class="img-responsive header-img img-rounded" alt="header">
+        <img src="img/coffee-shop.jpg" class="img-responsive img-rounded" alt="header">
         <div class="header-text">
-          <h1 class="huge-header">Välkommen</h1>
-          <p class="lead">Till Irish Cuppers</p>
+          <div class="texthead">
+            <h1 class="huge-header">Irish Cuppers</h1>
+            <p class="lead">Warm coffee and soft butts</p>
+          </div>
+          <div class="header-img">
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+          </div>
         </div>
         <div class="header-info">
           <h2>Vi serverar det hetaste kaffet i staden</h2>
