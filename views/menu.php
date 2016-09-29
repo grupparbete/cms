@@ -23,7 +23,7 @@ include "head.php";
         <img src="img/<?php echo $row['img']; ?>" alt="Coffe">
         <div class="caption">
           <h1><?php echo $row['menu_header']; ?></h1>
-          <a class="btn btn-danger" href="<?php echo $base ?>/delMenu/<?php echo $row['menu']; ?>" role="button">Delete this item</a>
+          <?php if (isset($_SESSION["userID"])) { ?><a class="btn btn-danger" href="<?php echo $base ?>/delMenu/<?php echo $row['menu']; ?>" role="button">Tag bort detta</a><?php } ?>
         </div>
       </div>
     </div>
@@ -47,11 +47,13 @@ include "head.php";
       </div>
     </div>
     <?php } ?>
+    </div>
   </div>
-</div>
-
+</body>
+<div style="position: fixed; bottom: 0px; width: 100%">
   <?php 
   
     include "footer.php";
 
   ?> 
+</div>  
