@@ -14,8 +14,8 @@ include "head.php";
           </div>
           <div class="header-img">
             <img src="img/1.jpg" alt="">
-            <img src="img/2.jpg" alt="">
             <img src="img/3.jpg" alt="">
+            <img src="img/2.jpg" alt="">
           </div>
         </div>
         <div class="header-info">
