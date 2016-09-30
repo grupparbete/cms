@@ -4,6 +4,7 @@
 
 ?>
 <div class="container">
+<div class="jumbotron">
 <?php 
 
 if (isset($_SESSION["redir"])) {
@@ -12,6 +13,7 @@ if (isset($_SESSION["redir"])) {
 }
 
 ?>
+  <h1>Lägg till ett inlägg</h1>
 	<form id="post_art" action="<?php echo $base ?>/post/add" method="post" enctype= "multipart/form-data">
 	  <div class="form-group" >
 	    <label for="InputTitle">Titeln</label>
@@ -74,5 +76,6 @@ if (isset($_SESSION["redir"])) {
 </tbody>
 </table>
 
+</div>
 </div>
 
