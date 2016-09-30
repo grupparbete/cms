@@ -8,7 +8,7 @@
 <?php 
 
 if (isset($_SESSION["redir"]) && $_SESSION['redir'] !== 'no') {
-	echo "<script>swal('Misslyckades', '".$_SESSION['redir']."', 'error')</script>";
+	echo "<script>swal('Varning', '".$_SESSION['redir']."', 'error')</script>";
 	unset($_SESSION["redir"]);
 }
 
