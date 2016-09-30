@@ -7,8 +7,8 @@
 <div class="jumbotron">
 <?php 
 
-if (isset($_SESSION["redir"])) {
-	echo "<p class='heads-up'>{$_SESSION['redir']}</p>";
+if (isset($_SESSION["redir"]) && $_SESSION['redir'] !== 'no') {
+	echo "<script>swal('Misslyckades', '".$_SESSION['redir']."', 'error')</script>";
 	unset($_SESSION["redir"]);
 }
 

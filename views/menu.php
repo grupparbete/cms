@@ -8,10 +8,10 @@ include "head.php";
 
   <?php 
 
-  if (isset($_SESSION["redir"])) {
-    echo "<p class='heads-up'>{$_SESSION['redir']}</p>";
-    unset($_SESSION["redir"]);
-  }
+    if (isset($_SESSION["redir"]) && $_SESSION['redir'] !== 'no') {
+      echo "<script>swal('Misslyckades', '".$_SESSION['redir']."', 'error')</script>";
+      unset($_SESSION["redir"]);
+    }
 
   ?>
 

@@ -18,6 +18,9 @@
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
 
+    <script src="dist/sweetalert.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+
   </head>
 
   <body>

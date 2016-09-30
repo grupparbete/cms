@@ -101,7 +101,7 @@ $app->get("/del/:id", function($id) use ($app, $login, $posts)
 
 	} else {
 
-		$app->redirect("/", "");
+		$app->redirect("/", "no");
 
 	}
 
@@ -156,7 +156,7 @@ $app->get("/delMenu/:id", function($id) use ($app, $login, $menu)
 
 	} else {
 
-		$app->redirect("/", "");
+		$app->redirect("/", "no");
 
 	}
 
@@ -168,7 +168,7 @@ $app->post("/login", function () use ($app, $login)
 
 	if ($login->tryLogin($_POST)) {
 
-		$app->redirect("/", "");
+		$app->redirect("/", "no");
 
 	} else {
 
@@ -184,11 +184,11 @@ $app->get("/logout", function () use ($app, $login)
 
 	if ($login->tryLogout()) {
 
-		$app->redirect("/", "");
+		$app->redirect("/", "no");
 
 	} else {
 
-		$app->redirect("/", "");
+		$app->redirect("/", "no");
 
 	}
 

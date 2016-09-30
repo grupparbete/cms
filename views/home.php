@@ -2,7 +2,15 @@
 
 include "head.php";
 
+
+if (isset($_SESSION["redir"]) && $_SESSION['redir'] !== 'no') {
+	echo "<script>swal('Misslyckades', '".$_SESSION['redir']."', 'error')</script>";
+	unset($_SESSION["redir"]);
+}
+
 ?>
+
+
     <div class="container">
 
       <div class="welcome-header">
