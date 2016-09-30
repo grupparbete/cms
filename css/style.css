@@ -23,7 +23,8 @@ body {
 }
 
 .header-img>img {
-  width: 33%;
+  width: 30%;
+  padding-left: 10px;
 }
 
 .huge-header {
@@ -75,6 +76,8 @@ span.icon-bar {
 .welcome-header {
   background: rgba(0, 0, 0, 0.7);
   padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 3px;
 }
 
@@ -137,6 +140,12 @@ span.icon-bar {
   .box1, .box2, .box3 {
     margin: 5px;
     padding: 10px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .header-img>img {
+    display: none;
   }
 }
 
