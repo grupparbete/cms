@@ -47,12 +47,11 @@ if (isset($_SESSION["redir"]) && $_SESSION['redir'] !== 'no') {
         </div>
       </div>
 
+    </div>
       <?php 
       
         include "footer.php";
 
       ?> 
-    </div>
-
   </body>
 </html>

@@ -3,8 +3,8 @@
 include "head.php";
 
 ?>
-<div id="article" class="jumbotron">
 	<div class="container">
+		<div id="article" class="jumbotron">
 
 		<img src="../img/<?php echo $v[0]['img']; ?>" class="img-responsive img-rounded" alt="Image">
 

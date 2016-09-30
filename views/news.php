@@ -7,6 +7,11 @@ include "head.php";
 <div class="container">
 
 <?php
+
+    if($v === []) {
+        echo "<h1>Inga Nyheter</h1>";
+    }
+
     foreach($v as $row) {
         ?>
 
@@ -45,11 +50,12 @@ include "head.php";
 
 </div>
 
+<div class="bottom-footer">
 <?php 
 
     include "footer.php";
 
 ?>
-
+</div>
 </body>
 </html>

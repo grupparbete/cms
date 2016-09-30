@@ -6,6 +6,8 @@ include "head.php";
 
 <div class="container">
 
+
+
   <?php 
 
     if (isset($_SESSION["redir"]) && $_SESSION['redir'] !== 'no') {
@@ -16,6 +18,11 @@ include "head.php";
   ?>
 
   <h1>Meny</h1>
+  <?php 
+    if($v === []) {
+        echo "<h3>Menyn är tom för tillfället</h3>";
+    }
+  ?>
   <div class="row">
   <?php foreach ($v as $row) { ?>
     <div class="col-xs-6 col-md-3">
